@@ -3,20 +3,45 @@
 #include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/bt.h>
 
+/ {
+    behaviors {
+        inc_dec_kp_2: behavior_sensor_rotate_key_press_2 {
+            compatible = "zmk,behavior-sensor-rotate-key-press";
+            label = "ENC_KEY_PRESS_2";
+            triggers-per-rotation = <1024>;
+            #sensor-binding-cells = <2>;
+            
+        };
+    };
+};
+
+/ {
+    behaviors {
+        inc_dec_kp_3: behavior_sensor_rotate_key_press_3 {
+            compatible = "zmk,behavior-sensor-rotate-key-press";
+            label = "ENC_KEY_PRESS_3";
+            triggers-per-rotation = <256>;
+            #sensor-binding-cells = <2>;
+            
+        };
+    };
+};
+
+/ {
+    behaviors {
+        inc_dec_kp_4: behavior_sensor_rotate_key_press_4 {
+            compatible = "zmk,behavior-sensor-rotate-key-press";
+            label = "ENC_KEY_PRESS_4";
+            triggers-per-rotation = <32>;
+            #sensor-binding-cells = <2>;
+            
+        };
+    };
+};
+
+
 &inc_dec_kp {
 	triggers-per-rotation = <4>;
-};
-&inc_dec_highest_sens {
-	triggers-per-rotation = <1024>;
-};
-&inc_dec_high_sens {
-	triggers-per-rotation = <512>;
-};
-&inc_dec_medium_sens {
-	triggers-per-rotation = <256>;
-};
-&inc_dec_low_sens {
-	triggers-per-rotation = <32>;
 };
 &def_lshft {
 	triggers-per-rotation = <4>;
@@ -34,22 +59,17 @@
 		one {
 			//PREV | PLAY/PAUSE | NEXT
 			bindings = <&kp C_PREV &lt 4 C_PP &kp C_NEXT>;
-			sensor-bindings = <&inc_dec_highest_sens UP_ARROW DOWN_ARROW>;
+			sensor-bindings = <&inc_dec_kp_2 UP_ARROW DOWN_ARROW>;
 		};
 		two {
 			//PREV | PLAY/PAUSE | NEXT
 			bindings = <&kp C_PREV &lt 4 C_PP &kp C_NEXT>;
-			sensor-bindings = <&inc_dec_high_sens UP_ARROW DOWN_ARROW>;
+			sensor-bindings = <&inc_dec_kp_3 UP_ARROW DOWN_ARROW>;
 		};
 		three {
 			//PREV | PLAY/PAUSE | NEXT
 			bindings = <&kp C_PREV &lt 4 C_PP &kp C_NEXT>;
-			sensor-bindings = <&inc_dec_medium_sens UP_ARROW DOWN_ARROW>;
-		};
-		four {
-			//PREV | PLAY/PAUSE | NEXT
-			bindings = <&kp C_PREV &lt 4 C_PP &kp C_NEXT>;
-			sensor-bindings = <&inc_dec_low_sens UP_ARROW DOWN_ARROW>;
+			sensor-bindings = <&inc_dec_kp_4 UP_ARROW DOWN_ARROW>;
 		};
 		shift {
 			//PREV | PLAY/PAUSE | NEXT
