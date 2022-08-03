@@ -6,6 +6,18 @@
 &inc_dec_kp {
 	triggers-per-rotation = <4>;
 };
+&inc_dec_highest_sens {
+	triggers-per-rotation = <1024>;
+};
+&inc_dec_high_sens {
+	triggers-per-rotation = <512>;
+};
+&inc_dec_medium_sens {
+	triggers-per-rotation = <256>;
+};
+&inc_dec_low_sens {
+	triggers-per-rotation = <32>;
+};
 &def_lshft {
 	triggers-per-rotation = <4>;
 };
@@ -22,16 +34,22 @@
 		one {
 			//PREV | PLAY/PAUSE | NEXT
 			bindings = <&kp C_PREV &lt 4 C_PP &kp C_NEXT>;
-			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+			sensor-bindings = <&inc_dec_highest_sens UP_ARROW DOWN_ARROW>;
 		};
 		two {
 			//PREV | PLAY/PAUSE | NEXT
-			bindings = <&kp LEFT &lt 4 SPACE &kp RIGHT>;
-			sensor-bindings = <&inc_dec_kp UP_ARROW DOWN_ARROW>;
+			bindings = <&kp C_PREV &lt 4 C_PP &kp C_NEXT>;
+			sensor-bindings = <&inc_dec_high_sens UP_ARROW DOWN_ARROW>;
 		};
 		three {
 			//PREV | PLAY/PAUSE | NEXT
-			bindings = <&kp C_MUTE &lt 4 F13 &kp C_PP>;
+			bindings = <&kp C_PREV &lt 4 C_PP &kp C_NEXT>;
+			sensor-bindings = <&inc_dec_medium_sens UP_ARROW DOWN_ARROW>;
+		};
+		four {
+			//PREV | PLAY/PAUSE | NEXT
+			bindings = <&kp C_PREV &lt 4 C_PP &kp C_NEXT>;
+			sensor-bindings = <&inc_dec_low_sens UP_ARROW DOWN_ARROW>;
 		};
 		shift {
 			//PREV | PLAY/PAUSE | NEXT
