@@ -8,30 +8,6 @@
         inc_dec_kp_2: behavior_sensor_rotate_key_press_2 {
             compatible = "zmk,behavior-sensor-rotate-key-press";
             label = "ENC_KEY_PRESS_2";
-            triggers-per-rotation = <1024>;
-            #sensor-binding-cells = <2>;
-            
-        };
-    };
-};
-
-/ {
-    behaviors {
-        inc_dec_kp_3: behavior_sensor_rotate_key_press_3 {
-            compatible = "zmk,behavior-sensor-rotate-key-press";
-            label = "ENC_KEY_PRESS_3";
-            triggers-per-rotation = <256>;
-            #sensor-binding-cells = <2>;
-            
-        };
-    };
-};
-
-/ {
-    behaviors {
-        inc_dec_kp_4: behavior_sensor_rotate_key_press_4 {
-            compatible = "zmk,behavior-sensor-rotate-key-press";
-            label = "ENC_KEY_PRESS_4";
             triggers-per-rotation = <32>;
             #sensor-binding-cells = <2>;
             
@@ -58,18 +34,18 @@
 		};
 		one {
 			//PREV | PLAY/PAUSE | NEXT
-			bindings = <&kp C_PREV &lt 4 C_PP &kp C_NEXT>;
-			sensor-bindings = <&inc_dec_kp_2 UP_ARROW DOWN_ARROW>;
+			bindings = <&kp C_MUTE &lt 4 F13 &kp C_PP>;
+			sensor-bindings = <&inc_dec_kp UP_ARROW DOWN_ARROW>;
 		};
 		two {
 			//PREV | PLAY/PAUSE | NEXT
-			bindings = <&kp C_PREV &lt 4 C_PP &kp C_NEXT>;
-			sensor-bindings = <&inc_dec_kp_3 UP_ARROW DOWN_ARROW>;
+			bindings = <&kp C_MUTE &lt 4 F13 &kp C_PP>;
+			sensor-bindings = <&inc_dec_kp_2 UP_ARROW DOWN_ARROW>;
 		};
 		three {
 			//PREV | PLAY/PAUSE | NEXT
-			bindings = <&kp C_PREV &lt 4 C_PP &kp C_NEXT>;
-			sensor-bindings = <&inc_dec_kp_4 UP_ARROW DOWN_ARROW>;
+			bindings = <&kp C_MUTE &lt 4 F13 &kp C_PP>;
+			sensor-bindings = <&inc_dec_kp_2 C_VOL_UP C_VOL_DN>;
 		};
 		shift {
 			//PREV | PLAY/PAUSE | NEXT
